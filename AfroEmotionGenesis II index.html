@@ -1,0 +1,85 @@
+import React from 'react'; import { Button } from "@/components/ui/button"; import { Card, CardContent } from "@/components/ui/card"; import { motion } from 'framer-motion'; import { FaSpotify, FaApple, FaSoundcloud, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+
+export default function AfroEmotionGenesis() { return ( <div className="min-h-screen bg-black text-white font-sans"> {/* Header */} <header className="flex justify-between items-center p-6 border-b border-gray-700"> <h1 className="text-2xl font-bold tracking-wider">SS</h1> <nav className="space-x-6 text-gray-300"> <a href="#home" className="hover:text-white">Home</a> <a href="#about" className="hover:text-white">About</a> <a href="#music" className="hover:text-white">Music</a> <a href="#blog" className="hover:text-white">Blog</a> <a href="#brand" className="hover:text-white">Brand</a> <a href="#contact" className="hover:text-white">Contact</a> </nav> </header>
+
+{/* Home Section */}
+  <section id="home" className="flex flex-col items-center justify-center text-center py-24">
+    <motion.h2 
+      className="text-5xl font-bold mb-6"
+      initial={{ opacity: 0, y: 20 }} 
+      animate={{ opacity: 1, y: 0 }} 
+      transition={{ duration: 1 }}>
+      Behind every smile, there’s a boy still learning how to heal.
+    </motion.h2>
+    <div className="flex gap-4">
+      <Button className="bg-white text-black font-semibold px-6 py-3 rounded-2xl">Listen Now</Button>
+      <Button variant="outline" className="border-white text-white">Watch Video</Button>
+    </div>
+  </section>
+
+  {/* About Section */}
+  <section id="about" className="px-8 py-20 text-center border-t border-gray-800">
+    <h3 className="text-3xl font-bold mb-6">About</h3>
+    <p className="max-w-2xl mx-auto text-gray-300 leading-relaxed">
+      Sincerely Sachiel is a voice of emotion — blending Afro soul and truth. His music speaks from the heart, capturing pain, hope, and rhythm that connect deeply with listeners across the world.
+    </p>
+  </section>
+
+  {/* Music Section */}
+  <section id="music" className="px-8 py-20 border-t border-gray-800">
+    <h3 className="text-3xl font-bold mb-10 text-center">Music</h3>
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {["Boy Behind Smile", "Human and Robots", "Valet Authority", "My Friend"].map((title) => (
+        <Card key={title} className="bg-gray-900 border-gray-700">
+          <CardContent className="text-center py-8">
+            <h4 className="text-xl font-semibold">{title}</h4>
+            <div className="flex justify-center gap-3 mt-4">
+              <a href="#" className="text-green-500 hover:text-green-400"><FaSpotify size={24} /></a>
+              <a href="#" className="text-gray-200 hover:text-white"><FaApple size={24} /></a>
+              <a href="#" className="text-orange-500 hover:text-orange-400"><FaSoundcloud size={24} /></a>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </section>
+
+  {/* Blog Section */}
+  <section id="blog" className="px-8 py-20 border-t border-gray-800 text-center">
+    <h3 className="text-3xl font-bold mb-10">Emotional Quotes</h3>
+    <div className="space-y-6 max-w-2xl mx-auto text-gray-300 italic">
+      <p>“Sometimes the loudest cry is typed as a text no one reads.”</p>
+      <p>“The strongest hearts break in silence.”</p>
+      <p>“If you see me smiling, know I survived another night.”</p>
+    </div>
+  </section>
+
+  {/* Brand Section */}
+  <section id="brand" className="px-8 py-20 border-t border-gray-800 text-center">
+    <h3 className="text-3xl font-bold mb-4">Afro Emotion Genesis</h3>
+    <p className="text-gray-400 max-w-xl mx-auto mb-6">
+      The brand behind the sound — turning emotions into art.
+    </p>
+    <Button className="bg-white text-black">Explore Brand</Button>
+  </section>
+
+  {/* Contact Section */}
+  <section id="contact" className="px-8 py-20 border-t border-gray-800 text-center">
+    <h3 className="text-3xl font-bold mb-4">Contact</h3>
+    <p className="text-gray-400 mb-6">Reach out for booking, collaborations or messages to SS.</p>
+    <div className="flex justify-center gap-5 mb-8">
+      <a href="#" className="text-pink-500 hover:text-pink-400"><FaInstagram size={28} /></a>
+      <a href="#" className="text-blue-400 hover:text-blue-300"><FaTwitter size={28} /></a>
+      <a href="#" className="text-red-600 hover:text-red-500"><FaYoutube size={28} /></a>
+    </div>
+    <Button className="bg-white text-black">Send a Message</Button>
+  </section>
+
+  {/* Footer */}
+  <footer className="py-6 border-t border-gray-800 text-center text-gray-500 text-sm">
+    © {new Date().getFullYear()} Afro Emotion Genesis — All Rights Reserved.
+  </footer>
+</div>
+
+); }
+
